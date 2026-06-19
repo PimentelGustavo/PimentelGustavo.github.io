@@ -276,6 +276,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!prefersReducedMotion) new ParticleEngine();
 
+    // i18n must run before typewriter so data-text is set in the correct language
+    if (typeof initI18n === "function") initI18n();
+
     initScrollReveal();
     initNavbarShrink();
     initMobileDrawer();

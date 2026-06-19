@@ -232,6 +232,43 @@ h3 { font-size: 1.3rem; font-weight: 700; }
 .nav-hamburger.active span:nth-child(2) { opacity: 0; }
 .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-xl);
+    padding: 0.4rem 0.85rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    transition: var(--transition-fast);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-left: 0.5rem;
+}
+
+.lang-switcher:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(79, 70, 229, 0.06);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.12);
+}
+
+.lang-switcher .lang-flag {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.lang-switcher .lang-label {
+    text-transform: uppercase;
+}
+
 .mobile-drawer {
     display: none;
     position: fixed;

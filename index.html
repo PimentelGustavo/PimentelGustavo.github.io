@@ -23,6 +23,7 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Unbounded:wght@400;700;800;900&display=swap">
 
     <link rel="stylesheet" href="style.css">
+    <script src="i18n.js" defer></script>
 </head>
 
 <body>
@@ -33,12 +34,16 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">gustavopimentel.dev</a>
             <ul class="nav-links">
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#workflow">Metodologia</a></li>
-                <li><a href="#experience">Experiência</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#workflow" data-i18n="nav.workflow">Metodologia</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
             </ul>
-            <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu de navegação">
+            <button class="lang-switcher" id="lang-switcher" aria-label="Switch language">
+                <span class="lang-flag">🇺🇸</span>
+                <span class="lang-label">EN</span>
+            </button>
+            <button class="nav-hamburger" id="nav-hamburger" data-i18n-aria="nav.hamburger.aria" aria-label="Abrir menu de navegação">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -49,10 +54,10 @@
     <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
     <aside class="mobile-drawer" id="mobile-drawer">
         <ul>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#workflow">Metodologia</a></li>
-            <li><a href="#experience">Experiência</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+            <li><a href="#workflow" data-i18n="nav.workflow">Metodologia</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
         </ul>
     </aside>
 
@@ -61,9 +66,9 @@
             <div class="hero-identity">
                 <div class="profile-pic-wrapper">
                     <div class="profile-pic-container">
-                        <img src="assets/profile.png" alt="Foto de Perfil de Gustavo Pimentel" class="profile-pic">
+                        <img src="assets/profile.png" alt="Foto de Perfil de Gustavo Pimentel" data-i18n-alt="hero.img.alt" class="profile-pic">
                     </div>
-                    <div class="profile-status-badge" title="Focado em soluções">
+                    <div class="profile-status-badge" title="Focado em soluções" data-i18n-title="hero.status.title">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                             stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -75,14 +80,15 @@
                 </div>
                 <h1>GUSTAVO<br><span class="accent-word">PIMENTEL</span></h1>
                 <p class="mono hero-subtitle" id="typewriter"
+                    data-i18n-data-text="hero.typewriter"
                     data-text="> Desenvolvedor de Software · Estudante de Eng. Mecânica">></p>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Desenvolvimento de soluções tecnológicas para empresas. Arquiteturas robustas,
                     IA aplicada, plataformas web escaláveis e infraestrutura em nuvem.
                 </p>
                 <div class="hero-cta-group">
-                    <a href="#projects" class="btn">Ver Projetos ↓</a>
-                    <a href="#contact" class="btn btn-outline">Contato</a>
+                    <a href="#projects" class="btn" data-i18n="hero.cta.projects">Ver Projetos ↓</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="hero.cta.contact">Contato</a>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/PimentelGustavo" target="_blank" rel="noopener noreferrer"
@@ -110,8 +116,8 @@
 
             <div class="hero-context">
                 <div class="glass-panel">
-                    <h2>Sobre</h2>
-                    <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                    <h2 data-i18n="about.title">Sobre</h2>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;" data-i18n="about.text">
                         Graduando em Engenharia Mecânica pelo IFES Vitória com foco em soluções tecnológicas.
                         Experiência real em plataformas de produção com Django, FastAPI, Angular e Next.js,
                         além de pipelines de Machine Learning com PyTorch e infraestrutura containerizada
@@ -120,7 +126,7 @@
                 </div>
 
                 <div class="glass-panel">
-                    <h2>Tech Stack</h2>
+                    <h2 data-i18n="tech.title">Tech Stack</h2>
                     <div class="tech-stack-grid">
                         <div class="tech-category">
                             <span class="tech-category-label">Backend</span>
@@ -154,7 +160,7 @@
                             </div>
                         </div>
                         <div class="tech-category">
-                            <span class="tech-category-label">Infraestrutura</span>
+                            <span class="tech-category-label" data-i18n="tech.cat.infra">Infraestrutura</span>
                             <div class="tech-badges">
                                 <span class="tech-badge cat-infra">Docker</span>
                                 <span class="tech-badge cat-infra">Kubernetes</span>
@@ -169,9 +175,9 @@
 
         <section class="section-container" id="projects">
             <div class="section-header reveal">
-                <span class="section-divider">Portfólio</span>
-                <h2>Projetos em Destaque</h2>
-                <p>Soluções completas — do treinamento de redes neurais ao deploy em produção.</p>
+                <span class="section-divider" data-i18n="projects.divider">Portfólio</span>
+                <h2 data-i18n="projects.title">Projetos em Destaque</h2>
+                <p data-i18n="projects.subtitle">Soluções completas — do treinamento de redes neurais ao deploy em produção.</p>
             </div>
 
             <div class="projects-grid">
@@ -181,13 +187,14 @@
                     <div class="project-card__image-wrapper">
                         <img src="assets/pokedex_web_print.png"
                             alt="Pokédex AI — Interface de upload de silhueta com Aurora Mesh e partículas interativas"
+                            data-i18n-alt="project.pokedex.img.alt"
                             loading="lazy">
-                        <span class="project-card__status project-card__status--live">Live</span>
+                        <span class="project-card__status project-card__status--live" data-i18n="project.pokedex.status">Live</span>
                     </div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Pokédex AI</h3>
-                        <p class="project-card__tagline mono">Who's That Pokémon? — Computer Vision</p>
-                        <p class="project-card__description">
+                        <p class="project-card__tagline mono" data-i18n="project.pokedex.tagline">Who's That Pokémon? — Computer Vision</p>
+                        <p class="project-card__description" data-i18n="project.pokedex.description">
                             Classificação de 1.025 espécies a partir de silhuetas binárias usando um ensemble de 5
                             modelos
                             ResNet-18 treinados do zero, com segmentação profunda BiRefNet e pipeline de Knowledge
@@ -202,7 +209,7 @@
                         </div>
                     </div>
                     <div class="project-card__footer">
-                        <span class="project-card__cta">Ver Projeto →</span>
+                        <span class="project-card__cta" data-i18n="project.pokedex.cta">Ver Projeto →</span>
                     </div>
                 </a>
 
@@ -211,13 +218,14 @@
                     <div class="project-card__image-wrapper">
                         <img src="assets/muralfy_print.png"
                             alt="Muralfy — Plataforma de montagem de painéis fotográficos para impressão"
+                            data-i18n-alt="project.muralfy.img.alt"
                             loading="lazy">
-                        <span class="project-card__status project-card__status--beta">Beta</span>
+                        <span class="project-card__status project-card__status--beta" data-i18n="project.muralfy.status">Beta</span>
                     </div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Muralfy</h3>
-                        <p class="project-card__tagline mono">Painéis Fotográficos para Impressão</p>
-                        <p class="project-card__description">
+                        <p class="project-card__tagline mono" data-i18n="project.muralfy.tagline">Painéis Fotográficos para Impressão</p>
+                        <p class="project-card__description" data-i18n="project.muralfy.description">
                             Plataforma web para montagem de painéis fotográficos em grande formato. O frontend
                             (React/Vite) realiza compressão client-side de até 250 imagens. O backend fornece uma REST
                             API em Django acoplada a um motor de processamento e geração de PDF otimizado em Rust.
@@ -231,7 +239,7 @@
                         </div>
                     </div>
                     <div class="project-card__footer">
-                        <span class="project-card__cta">Ver Projeto →</span>
+                        <span class="project-card__cta" data-i18n="project.muralfy.cta">Ver Projeto →</span>
                     </div>
                 </a>
 
@@ -240,13 +248,14 @@
                     <div class="project-card__image-wrapper">
                         <img src="assets/brabos_alfa_gameplay_print.png"
                             alt="Brabos.dev — Jogo arcade 3D de futebol com personagem estilizado do Brasil"
+                            data-i18n-alt="project.brabos.img.alt"
                             loading="lazy">
-                        <span class="project-card__status project-card__status--coming-soon">Em Breve</span>
+                        <span class="project-card__status project-card__status--coming-soon" data-i18n="project.brabos.status">Em Breve</span>
                     </div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Brabos.dev</h3>
-                        <p class="project-card__tagline mono">Jogo Arcade 3D — Copa do Mundo</p>
-                        <p class="project-card__description">
+                        <p class="project-card__tagline mono" data-i18n="project.brabos.tagline">Jogo Arcade 3D — Copa do Mundo</p>
+                        <p class="project-card__description" data-i18n="project.brabos.description">
                             Jogo arcade 3D para web com temática de futebol da Copa do Mundo.
                             Personagens estilizados representando seleções (Brasil e EUA funcionais),
                             motor gráfico em Three.js com alta performance em mobile via navegador.
@@ -258,7 +267,7 @@
                         </div>
                     </div>
                     <div class="project-card__footer">
-                        <span class="project-card__cta">Ver Projeto →</span>
+                        <span class="project-card__cta" data-i18n="project.brabos.cta">Ver Projeto →</span>
                     </div>
                 </a>
 
@@ -267,9 +276,9 @@
 
         <section class="section-container" id="workflow">
             <div class="section-header reveal">
-                <span class="section-divider">Fluxo de Trabalho</span>
-                <h2>AI-Assisted Engineering</h2>
-                <p>Integração de Inteligência Artificial no ciclo de vida de desenvolvimento ágil, maximizando a
+                <span class="section-divider" data-i18n="workflow.divider">Fluxo de Trabalho</span>
+                <h2 data-i18n="workflow.title">AI-Assisted Engineering</h2>
+                <p data-i18n="workflow.subtitle">Integração de Inteligência Artificial no ciclo de vida de desenvolvimento ágil, maximizando a
                     velocidade de entrega sem abrir mão do rigor técnico e arquitetural.</p>
             </div>
 
@@ -277,8 +286,8 @@
 
                 <div class="glass-panel reveal"
                     style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                    <h3 style="color: var(--accent-primary);">Spec-Driven Development (SDD)</h3>
-                    <p class="project-card__description">
+                    <h3 style="color: var(--accent-primary);" data-i18n="workflow.sdd.title">Spec-Driven Development (SDD)</h3>
+                    <p class="project-card__description" data-i18n-html="workflow.sdd.description">
                         Orientação do desenvolvimento a partir de especificações rigorosas e contratos de API bem
                         definidos. Isso permite que agentes de IA entendam o escopo exato do domínio e gerem, testem e
                         iterem sobre o código de forma previsível e determinística.
@@ -287,8 +296,8 @@
 
                 <div class="glass-panel reveal"
                     style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                    <h3 style="color: var(--accent-secondary);">Orquestração Autônoma</h3>
-                    <p class="project-card__description">
+                    <h3 style="color: var(--accent-secondary);" data-i18n="workflow.orchestration.title">Orquestração Autônoma</h3>
+                    <p class="project-card__description" data-i18n-html="workflow.orchestration.description">
                         Utilização avançada de agentes de linha de comando como <strong>Claude Code</strong> e
                         <strong>OpenCode</strong> para <em>pair programming</em> autônomo. Aplico essas ferramentas para
                         refatoração profunda, geração de testes unitários e implementação de features no terminal.
@@ -297,8 +306,8 @@
 
                 <div class="glass-panel reveal"
                     style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                    <h3 style="color: var(--accent-tertiary);">Agilidade Aumentada por IA</h3>
-                    <p class="project-card__description">
+                    <h3 style="color: var(--accent-tertiary);" data-i18n="workflow.agile.title">Agilidade Aumentada por IA</h3>
+                    <p class="project-card__description" data-i18n-html="workflow.agile.description">
                         Adaptação de rituais ágeis (Scrum/Kanban) para incluir a IA como parte da força de trabalho.
                         Isso inclui automação de revisões de código, análise estática e prototipagem rápida, acelerando
                         drasticamente o <em>Time-to-Market</em> (TTM).
@@ -312,52 +321,52 @@
 
         <section class="section-container" id="experience">
             <div class="section-header reveal">
-                <span class="section-divider">Trajetória</span>
-                <h2>Experiência Profissional</h2>
-                <p>Engenharia de software aplicada em ambientes reais de produção.</p>
+                <span class="section-divider" data-i18n="experience.divider">Trajetória</span>
+                <h2 data-i18n="experience.title">Experiência Profissional</h2>
+                <p data-i18n="experience.subtitle">Engenharia de software aplicada em ambientes reais de produção.</p>
             </div>
 
             <div class="timeline">
 
                 <article class="timeline-entry glass-panel reveal">
-                    <span class="timeline-period mono">ABR 2025 — ABR 2026</span>
-                    <h3 class="timeline-role">Estagiário de Engenharia Mecânica</h3>
-                    <p class="timeline-company">CLIMA VIX COMÉRCIO E SERVIÇOS LTDA · Cariacica, ES</p>
+                    <span class="timeline-period mono" data-i18n="exp1.period">ABR 2025 — ABR 2026</span>
+                    <h3 class="timeline-role" data-i18n="exp1.role">Estagiário de Engenharia Mecânica</h3>
+                    <p class="timeline-company" data-i18n="exp1.company">CLIMA VIX COMÉRCIO E SERVIÇOS LTDA · Cariacica, ES</p>
                     <ul class="timeline-highlights">
-                        <li>Plataforma completa de orçamentos técnicos com Python (Django REST Framework) + Angular,
+                        <li data-i18n="exp1.item1">Plataforma completa de orçamentos técnicos com Python (Django REST Framework) + Angular,
                             integrando redes neurais para otimização</li>
-                        <li>Arquitetura assíncrona com Celery e Redis para processamento de tarefas pesadas em segundo
+                        <li data-i18n="exp1.item2">Arquitetura assíncrona com Celery e Redis para processamento de tarefas pesadas em segundo
                             plano</li>
-                        <li>DevOps end-to-end: containerização com Docker, orquestração Kubernetes e servidores com
+                        <li data-i18n="exp1.item3">DevOps end-to-end: containerização com Docker, orquestração Kubernetes e servidores com
                             domínio registrado em alta disponibilidade</li>
-                        <li>Engenharia de manutenção: montagens, instalações e manutenções preventivas/corretivas de
+                        <li data-i18n="exp1.item4">Engenharia de manutenção: montagens, instalações e manutenções preventivas/corretivas de
                             equipamentos mecânicos e elétricos</li>
                     </ul>
                 </article>
 
                 <article class="timeline-entry glass-panel reveal">
-                    <span class="timeline-period mono">ABR 2023 — ABR 2026</span>
-                    <h3 class="timeline-role">Extensionista — Desenvolvimento de Software</h3>
-                    <p class="timeline-company">Projeto E-TRÂNSITO ADUANEIRO · IFES / Receita Federal · Alfândega do
+                    <span class="timeline-period mono" data-i18n="exp2.period">ABR 2023 — ABR 2026</span>
+                    <h3 class="timeline-role" data-i18n="exp2.role">Extensionista — Desenvolvimento de Software</h3>
+                    <p class="timeline-company" data-i18n="exp2.company">Projeto E-TRÂNSITO ADUANEIRO · IFES / Receita Federal · Alfândega do
                         Porto de Vitória</p>
                     <ul class="timeline-highlights">
-                        <li>Desenvolvimento de solução tecnológica para a Alfândega do Porto de Vitória (ALF/VIT) em
+                        <li data-i18n="exp2.item1">Desenvolvimento de solução tecnológica para a Alfândega do Porto de Vitória (ALF/VIT) em
                             parceria com a Receita Federal</li>
-                        <li>Customização de interface, versionamento de código e configuração de infraestrutura
+                        <li data-i18n="exp2.item2">Customização de interface, versionamento de código e configuração de infraestrutura
                             escalável</li>
-                        <li>Stack: Python, Django REST Framework, com foco em segurança e compliance aduaneiro</li>
+                        <li data-i18n="exp2.item3">Stack: Python, Django REST Framework, com foco em segurança e compliance aduaneiro</li>
                     </ul>
                 </article>
 
                 <article class="timeline-entry glass-panel reveal">
-                    <span class="timeline-period mono">MAR 2022 — JAN 2023</span>
-                    <h3 class="timeline-role">Extensionista — Robótica Educacional</h3>
-                    <p class="timeline-company">A Escola de Inovação de Vitória, ES · IFES</p>
+                    <span class="timeline-period mono" data-i18n="exp3.period">MAR 2022 — JAN 2023</span>
+                    <h3 class="timeline-role" data-i18n="exp3.role">Extensionista — Robótica Educacional</h3>
+                    <p class="timeline-company" data-i18n="exp3.company">A Escola de Inovação de Vitória, ES · IFES</p>
                     <ul class="timeline-highlights">
-                        <li>Suporte a professores e estudantes em programação e montagem de robôs com Lego Spike Prime e
+                        <li data-i18n="exp3.item1">Suporte a professores e estudantes em programação e montagem de robôs com Lego Spike Prime e
                             Arduino</li>
-                        <li>Fabricação digital: Impressão 3D e CNC aplicados em contexto educacional</li>
-                        <li>Acompanhamento de atividades de robótica, metodologias ativas e torneios entre estudantes
+                        <li data-i18n="exp3.item2">Fabricação digital: Impressão 3D e CNC aplicados em contexto educacional</li>
+                        <li data-i18n="exp3.item3">Acompanhamento de atividades de robótica, metodologias ativas e torneios entre estudantes
                         </li>
                     </ul>
                 </article>
@@ -368,13 +377,13 @@
 
     <section class="contact-section" id="contact">
         <div class="reveal">
-            <span class="section-divider">Contato</span>
-            <h2>Vamos <span class="accent-word">Construir</span> Algo?</h2>
-            <p class="section-subtitle">
+            <span class="section-divider" data-i18n="contact.divider">Contato</span>
+            <h2><span data-i18n="contact.title.pre">Vamos </span><span class="accent-word" data-i18n="contact.title.accent">Construir</span><span data-i18n="contact.title.post"> Algo?</span></h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">
                 Se você tem um projeto que precisa de engenharia de software séria — da arquitetura ao deploy —
                 entre em contato.
             </p>
-            <a href="mailto:contato@pimentelgustavo.com.br" class="btn">Enviar Email</a>
+            <a href="mailto:contato@pimentelgustavo.com.br" class="btn" data-i18n="contact.cta">Enviar Email</a>
             <p class="contact-email">
                 <a href="mailto:contato@pimentelgustavo.com.br">contato@pimentelgustavo.com.br</a>
             </p>
@@ -404,7 +413,7 @@
     </section>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Gustavo Pimentel. Construído com HTML, CSS e JavaScript puro.</p>
+        <p data-i18n="footer.text">&copy; 2026 Gustavo Pimentel. Construído com HTML, CSS e JavaScript puro.</p>
     </footer>
 
     <script src="main.js" defer></script>
