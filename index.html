@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Pimentel — Desenvolvedor de Software & Soluções Tecnológicas</title>
+    <meta name="description" content="Portfólio de Gustavo Pimentel. Desenvolvimento de soluções tecnológicas: IA, Visão Computacional, plataformas web escaláveis e jogos 3D interativos.">
+    <meta name="author" content="Gustavo Pimentel">
+
+    <meta property="og:title" content="Gustavo Pimentel — Portfolio">
+    <meta property="og:description" content="Desenvolvedor de Software. IA, Web, DevOps, Jogos 3D.">
+    <meta property="og:image" content="assets/og-preview.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pimentelgustavo.github.io">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Unbounded:wght@400;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="site-nav" id="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">gustavo.dev</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#workflow">Metodologia</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+    <aside class="mobile-drawer" id="mobile-drawer">
+        <ul>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#workflow">Metodologia</a></li>
+            <li><a href="#experience">Experiência</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-identity">
+                <div class="profile-pic-wrapper">
+                    <div class="profile-pic-container">
+                        <img src="assets/profile.png" alt="Foto de Perfil de Gustavo Pimentel" class="profile-pic">
+                    </div>
+                    <div class="profile-status-badge" title="Focado em soluções">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                </div>
+                <h1>GUSTAVO<br><span class="accent-word">PIMENTEL</span></h1>
+                <p class="mono hero-subtitle" id="typewriter" data-text="> Desenvolvedor de Software · Estudante de Eng. Mecânica">></p>
+                <p class="hero-description">
+                    Desenvolvimento de soluções tecnológicas para empresas. Arquiteturas robustas, 
+                    IA aplicada, plataformas web escaláveis e infraestrutura em nuvem.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#projects" class="btn">Ver Projetos ↓</a>
+                    <a href="#contact" class="btn btn-outline">Contato</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/PimentelGustavo" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gustavo-pimentel-0062b716a" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:contato@pimentelgustavo.com.br" aria-label="Email">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-context">
+                <div class="glass-panel">
+                    <h2>Sobre</h2>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                        Graduando em Engenharia Mecânica pelo IFES Vitória com foco em engenharia de software.
+                        Experiência real em plataformas de produção com Django, FastAPI, Angular e Next.js, 
+                        além de pipelines de Machine Learning com PyTorch e infraestrutura containerizada 
+                        com Docker e Kubernetes.
+                    </p>
+                </div>
+
+                <div class="glass-panel">
+                    <h2>Tech Stack</h2>
+                    <div class="tech-stack-grid">
+                        <div class="tech-category">
+                            <span class="tech-category-label">Backend</span>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">Rust</span>
+                                <span class="tech-badge">Celery</span>
+                                <span class="tech-badge">Redis</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-category-label">Frontend</span>
+                            <div class="tech-badges">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Angular</span>
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Three.js</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-category-label">IA / ML</span>
+                            <div class="tech-badges">
+                                <span class="tech-badge cat-ai">PyTorch</span>
+                                <span class="tech-badge cat-ai">OpenCV</span>
+                                <span class="tech-badge cat-ai">YOLO</span>
+                                <span class="tech-badge cat-ai">BiRefNet</span>
+                                <span class="tech-badge cat-ai">Distillation</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-category-label">Infraestrutura</span>
+                            <div class="tech-badges">
+                                <span class="tech-badge cat-infra">Docker</span>
+                                <span class="tech-badge cat-infra">Kubernetes</span>
+                                <span class="tech-badge cat-infra">Git</span>
+                                <span class="tech-badge cat-infra">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container" id="projects">
+            <div class="section-header reveal">
+                <span class="section-divider">Portfólio</span>
+                <h2>Projetos em Destaque</h2>
+                <p>Soluções completas — do treinamento de redes neurais ao deploy em produção.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <a href="https://huggingface.co/spaces/gpimentel/pokedex-web" target="_blank" rel="noopener" class="project-card glass-panel reveal" id="project-pokedex">
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/pokedex_web_print.png" alt="Pokédex AI — Interface de upload de silhueta com Aurora Mesh e partículas interativas" loading="lazy">
+                        <span class="project-card__status project-card__status--live">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">Pokédex AI</h3>
+                        <p class="project-card__tagline mono">Who's That Pokémon? — Computer Vision</p>
+                        <p class="project-card__description">
+                            Classificação de 1.025 espécies a partir de silhuetas binárias usando um ensemble de 5 modelos 
+                            ResNet-18 treinados do zero, com segmentação profunda BiRefNet e pipeline de Knowledge 
+                            Distillation para MobileNetV3. Top-1 Accuracy: 90.24%.
+                        </p>
+                        <div class="project-card__stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-card__footer">
+                        <span class="project-card__cta">Ver Projeto →</span>
+                    </div>
+                </a>
+
+                <a href="https://www.muralfy.app/pt_br" target="_blank" rel="noopener" class="project-card glass-panel reveal" id="project-muralfy">
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/muralfy_print.png" alt="Muralfy — Plataforma de montagem de painéis fotográficos para impressão" loading="lazy">
+                        <span class="project-card__status project-card__status--beta">Beta</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">Muralfy</h3>
+                        <p class="project-card__tagline mono">Painéis Fotográficos para Impressão</p>
+                        <p class="project-card__description">
+                            Plataforma web para montagem de painéis fotográficos em grande formato. O frontend (React/Vite) realiza compressão client-side de até 250 imagens. O backend fornece uma REST API em Django acoplada a um motor de processamento e geração de PDF otimizado em Rust.
+                        </p>
+                        <div class="project-card__stack">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Tailwind</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">Rust</span>
+                        </div>
+                    </div>
+                    <div class="project-card__footer">
+                        <span class="project-card__cta">Ver Projeto →</span>
+                    </div>
+                </a>
+
+                <a href="https://brabos.dev.pimentelgustavo.com.br" target="_blank" rel="noopener" class="project-card glass-panel reveal" id="project-brabos">
+                    <div class="project-card__image-wrapper">
+                        <img src="assets/brabos_alfa_gameplay_print.png" alt="Brabos.dev — Jogo arcade 3D de futebol com personagem estilizado do Brasil" loading="lazy">
+                        <span class="project-card__status project-card__status--coming-soon">Em Breve</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">Brabos.dev</h3>
+                        <p class="project-card__tagline mono">Jogo Arcade 3D — Copa do Mundo</p>
+                        <p class="project-card__description">
+                            Jogo arcade 3D para web com temática de futebol da Copa do Mundo. 
+                            Personagens estilizados representando seleções (Brasil e EUA funcionais), 
+                            motor gráfico em Three.js com alta performance em mobile via navegador.
+                        </p>
+                        <div class="project-card__stack">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Three.js</span>
+                            <span class="tech-badge">WebGL</span>
+                        </div>
+                    </div>
+                    <div class="project-card__footer">
+                        <span class="project-card__cta">Ver Projeto →</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="section-container" id="workflow">
+            <div class="section-header reveal">
+                <span class="section-divider">Fluxo de Trabalho</span>
+                <h2>AI-Assisted Engineering</h2>
+                <p>Integração de Inteligência Artificial no ciclo de vida de desenvolvimento ágil, maximizando a velocidade de entrega sem abrir mão do rigor técnico e arquitetural.</p>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="glass-panel reveal" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 style="color: var(--accent-primary);">Spec-Driven Development (SDD)</h3>
+                    <p class="project-card__description">
+                        Orientação do desenvolvimento a partir de especificações rigorosas e contratos de API bem definidos. Isso permite que agentes de IA entendam o escopo exato do domínio e gerem, testem e iterem sobre o código de forma previsível e determinística.
+                    </p>
+                </div>
+
+                <div class="glass-panel reveal" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 style="color: var(--accent-secondary);">Orquestração Autônoma</h3>
+                    <p class="project-card__description">
+                        Utilização avançada de agentes de linha de comando como <strong>Claude Code</strong> e <strong>OpenCode</strong> para <em>pair programming</em> autônomo. Aplico essas ferramentas para refatoração profunda, geração de testes unitários e implementação de features no terminal.
+                    </p>
+                </div>
+
+                <div class="glass-panel reveal" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 style="color: var(--accent-tertiary);">Agilidade Aumentada por IA</h3>
+                    <p class="project-card__description">
+                        Adaptação de rituais ágeis (Scrum/Kanban) para incluir a IA como parte da força de trabalho. Isso inclui automação de revisões de código, análise estática e prototipagem rápida, acelerando drasticamente o <em>Time-to-Market</em> (TTM).
+                    </p>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <section class="section-container" id="experience">
+            <div class="section-header reveal">
+                <span class="section-divider">Trajetória</span>
+                <h2>Experiência Profissional</h2>
+                <p>Engenharia de software aplicada em ambientes reais de produção.</p>
+            </div>
+
+            <div class="timeline">
+
+                <article class="timeline-entry glass-panel reveal">
+                    <span class="timeline-period mono">ABR 2025 — ABR 2026</span>
+                    <h3 class="timeline-role">Estagiário de Engenharia Mecânica</h3>
+                    <p class="timeline-company">CLIMA VIX COMÉRCIO E SERVIÇOS LTDA · Cariacica, ES</p>
+                    <ul class="timeline-highlights">
+                        <li>Plataforma completa de orçamentos técnicos com Python (Django REST Framework) + Angular, integrando redes neurais para otimização</li>
+                        <li>Arquitetura assíncrona com Celery e Redis para processamento de tarefas pesadas em segundo plano</li>
+                        <li>DevOps end-to-end: containerização com Docker, orquestração Kubernetes e servidores com domínio registrado em alta disponibilidade</li>
+                        <li>Engenharia de manutenção: montagens, instalações e manutenções preventivas/corretivas de equipamentos mecânicos e elétricos</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-entry glass-panel reveal">
+                    <span class="timeline-period mono">ABR 2023 — ABR 2026</span>
+                    <h3 class="timeline-role">Extensionista — Desenvolvimento de Software</h3>
+                    <p class="timeline-company">Projeto E-TRÂNSITO ADUANEIRO · IFES / Receita Federal · Alfândega do Porto de Vitória</p>
+                    <ul class="timeline-highlights">
+                        <li>Desenvolvimento de solução tecnológica para a Alfândega do Porto de Vitória (ALF/VIT) em parceria com a Receita Federal</li>
+                        <li>Customização de interface, versionamento de código e configuração de infraestrutura escalável</li>
+                        <li>Stack: Python, Django REST Framework, com foco em segurança e compliance aduaneiro</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-entry glass-panel reveal">
+                    <span class="timeline-period mono">MAR 2022 — JAN 2023</span>
+                    <h3 class="timeline-role">Extensionista — Robótica Educacional</h3>
+                    <p class="timeline-company">A Escola de Inovação de Vitória, ES · IFES</p>
+                    <ul class="timeline-highlights">
+                        <li>Suporte a professores e estudantes em programação e montagem de robôs com Lego Spike Prime e Arduino</li>
+                        <li>Fabricação digital: Impressão 3D e CNC aplicados em contexto educacional</li>
+                        <li>Acompanhamento de atividades de robótica, metodologias ativas e torneios entre estudantes</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-section" id="contact">
+        <div class="reveal">
+            <span class="section-divider">Contato</span>
+            <h2>Vamos <span class="accent-word">Construir</span> Algo?</h2>
+            <p class="section-subtitle">
+                Se você tem um projeto que precisa de engenharia de software séria — da arquitetura ao deploy — 
+                entre em contato.
+            </p>
+            <a href="mailto:contato@pimentelgustavo.com.br" class="btn">Enviar Email</a>
+            <p class="contact-email">
+                <a href="mailto:contato@pimentelgustavo.com.br">contato@pimentelgustavo.com.br</a>
+            </p>
+            <div class="contact-socials social-links">
+                <a href="https://github.com/PimentelGustavo" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gustavo-pimentel-0062b716a" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="mailto:contato@pimentelgustavo.com.br" aria-label="Email">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Gustavo Pimentel. Construído com HTML, CSS e JavaScript puro.</p>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
