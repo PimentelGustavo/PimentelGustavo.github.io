@@ -325,12 +325,8 @@ function applyTranslations(lang) {
     if (switcher) {
         const flagSpan = switcher.querySelector(".lang-flag");
         const labelSpan = switcher.querySelector(".lang-label");
-        
-        let idx = SUPPORTED_LANGS.indexOf(lang);
-        if (idx === -1) idx = 0;
-        const nextLang = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.length];
 
-        if (nextLang === "en-US") {
+        if (lang === "en-US") {
             if (flagSpan) flagSpan.textContent = "🇺🇸";
             if (labelSpan) labelSpan.textContent = "EN";
         } else {
@@ -343,7 +339,8 @@ function applyTranslations(lang) {
 /**
  * Switch to the other language and persist choice.
  */
-function toggleLanguage() {
+function toggleLanguage(e) {
+    if (e) e.preventDefault();
     const current = getCurrentLang();
     let idx = SUPPORTED_LANGS.indexOf(current);
     if (idx === -1) idx = 0;
