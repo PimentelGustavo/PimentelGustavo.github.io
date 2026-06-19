@@ -249,8 +249,13 @@ function initTypewriter() {
     const element = document.getElementById("typewriter");
     if (!element) return;
 
+    if (window.typewriterTimeout) {
+        clearTimeout(window.typewriterTimeout);
+    }
+
     const text = element.getAttribute("data-text");
     element.textContent = "";
+    element.classList.remove("typing-idle", "typing-finished");
     
     let i = 0;
     const speed = 40;
@@ -259,17 +264,17 @@ function initTypewriter() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
             i++;
-            setTimeout(type, speed);
+            window.typewriterTimeout = setTimeout(type, speed);
         } else {
             element.classList.add("typing-idle");
-            setTimeout(() => {
+            window.typewriterTimeout = setTimeout(() => {
                 element.classList.remove("typing-idle");
                 element.classList.add("typing-finished");
             }, 2000);
         }
     }
 
-    setTimeout(type, 300);
+    window.typewriterTimeout = setTimeout(type, 300);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

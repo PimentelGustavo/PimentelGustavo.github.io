@@ -234,8 +234,8 @@ const DEFAULT_LANG = "pt-BR";
 function detectBrowserLang() {
     const browserLangs = navigator.languages || [navigator.language];
     for (const lang of browserLangs) {
-        if (lang.startsWith("en")) return "en-US";
-        if (lang.startsWith("pt")) return "pt-BR";
+        if (lang && lang.startsWith("en")) return "en-US";
+        if (lang && lang.startsWith("pt")) return "pt-BR";
     }
     return DEFAULT_LANG;
 }
@@ -325,7 +325,12 @@ function applyTranslations(lang) {
     if (switcher) {
         const flagSpan = switcher.querySelector(".lang-flag");
         const labelSpan = switcher.querySelector(".lang-label");
-        if (lang === "pt-BR") {
+        
+        let idx = SUPPORTED_LANGS.indexOf(lang);
+        if (idx === -1) idx = 0;
+        const nextLang = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.length];
+
+        if (nextLang === "en-US") {
             if (flagSpan) flagSpan.textContent = "🇺🇸";
             if (labelSpan) labelSpan.textContent = "EN";
         } else {
@@ -340,7 +345,10 @@ function applyTranslations(lang) {
  */
 function toggleLanguage() {
     const current = getCurrentLang();
-    const next = current === "pt-BR" ? "en-US" : "pt-BR";
+    let idx = SUPPORTED_LANGS.indexOf(current);
+    if (idx === -1) idx = 0;
+    const next = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.length];
+    
     localStorage.setItem("portfolio-lang", next);
     applyTranslations(next);
 
@@ -355,6 +363,10 @@ function restartTypewriter() {
     const element = document.getElementById("typewriter");
     if (!element) return;
 
+    if (window.typewriterTimeout) {
+        clearTimeout(window.typewriterTimeout);
+    }
+
     const text = element.getAttribute("data-text");
     element.textContent = "";
     element.classList.remove("typing-idle", "typing-finished");
@@ -366,17 +378,17 @@ function restartTypewriter() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
             i++;
-            setTimeout(type, speed);
+            window.typewriterTimeout = setTimeout(type, speed);
         } else {
             element.classList.add("typing-idle");
-            setTimeout(() => {
+            window.typewriterTimeout = setTimeout(() => {
                 element.classList.remove("typing-idle");
                 element.classList.add("typing-finished");
             }, 2000);
         }
     }
 
-    setTimeout(type, 100);
+    window.typewriterTimeout = setTimeout(type, 100);
 }
 
 /**
